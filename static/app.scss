@@ -1,0 +1,145 @@
+@import 'global.scss';
+html,
+body {
+    height: 100%;
+    background: #f7f7f7;
+}
+
+body {
+    font-size: $font-size-default !important;
+    color: $font-color;
+}
+
+//-顶部导航
+#nav-bar {
+    background: #FFF;
+    >.item {
+        @extend .text-center;
+
+        &:first-child {
+            border-left: none;
+        }
+        a {
+            display: block;
+            padding: 0.26rem 0;
+            color:#4a4a4a;
+            font-size: 14px;
+            line-height: 14px;
+            &.active {
+                color: #647cff;
+                border-bottom: 2px solid#647cff;
+            }
+        }
+    }
+}
+
+//弹框等公用类样式
+
+//弱提示
+#message {
+    .weui-toast {
+        width:auto;
+        min-height: 0.8rem;
+        margin-left:0;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        p {
+            margin: 7px;
+        }
+    }
+}
+//Dialog
+.weui-dialog {
+    width: 72%;
+    border-radius: 12px;
+    .weui-dialog__hd {
+        height: 70px;
+        line-height: 70px;
+        padding: 0;
+        text-align: center;
+        font-size: 17px;
+        color:#4a4a4a;
+    }
+    .weui-dialog__bd {
+        display: none;
+    }
+    .weui-dialog__ft {
+        line-height: 44px;
+        display: box;              
+        display: -webkit-box;     
+        display: -moz-box;        
+        display: -ms-flexbox;     
+        display: -webkit-flex;    
+        display: flex; 
+        border-top: 1px solid #d5d5d6;
+        &:after {
+            border-top:0;
+        }
+        .weui-dialog__btn {
+            width:50%; 
+            text-align: center; /*IE*/
+            text-align: -moz-center; /*Firefox*/
+            text-align: -webkit-center; /*Chrome*/
+            font-size: 17px;
+            color: #647cff;
+            -webkit-box-flex:1;
+            -moz-box-flex:1;
+            -webkit-flex:1;
+            -ms-flex:1;
+            flex:1;
+            &:last-child { 
+                border-left: 1px solid #d5d5d6;
+                &:after {
+                    border-left:0; 
+                }
+            }            
+        }
+    }
+}
+
+//支付组件样式
+.yd-popup {
+    .confirm-title {
+        position: relative;
+        span {
+            position: absolute;
+            right: 15px;
+            font-size: 20px;
+            color: #9b9b9b;
+            text-shadow: 0 0 1px;
+        }
+    }
+    .pay-num {
+        height:22px;
+        line-height:22px;
+        text-align:center;
+        margin-top:20px;
+        font-size:22px;
+        color:#4a4a4a;
+    }
+    .pay-type {
+        .yd-cell {
+            &:after {
+                display: none;
+            }
+            .yd-cell-item {
+                &:not(:last-child){
+                    &:after {
+                        display:none;
+                    }
+                }
+                img {
+                    width: 0.4rem;
+                    height: 0.4rem;
+                } 
+            }
+        }
+    }
+}
+.yd-cell-right input[type=checkbox]:not(.yd-switch)+.yd-cell-radio-icon:after, 
+.yd-cell-right input[type=radio]+.yd-cell-radio-icon:after {
+    content: "\E600";
+    color: rgb(100, 124, 255);
+    font-size: 17px;
+    display: none;
+}
